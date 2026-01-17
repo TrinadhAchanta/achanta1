@@ -1,0 +1,8 @@
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40989
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.		IN	A
+
+;; ANSWER SECTION:
+example.com.	7100	IN	A	93.184.216.34
