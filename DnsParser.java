@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class DnsParser {
+    // Reference: RFC 1035 https://www.rfc-editor.org/rfc/rfc1035
     private static final Map<Integer, String> TYPE_MAP = Map.of(
             1, "A",
             5, "CNAME",
@@ -36,12 +37,6 @@ public class DnsParser {
     private DnsParser(byte[] data) {
         this.data = data;
         this.offset = 0;
-    }
-
-    private int readU8() {
-        int value = data[offset] & 0xFF;
-        offset += 1;
-        return value;
     }
 
     private int readU16() {
@@ -139,7 +134,7 @@ public class DnsParser {
         return new ResourceRecord(nameResult.name, type, recordClass, ttl, rdlength, rdataOffset, rdata);
     }
 
-    private static String formatFlags(int flags) {
+    private static FlagsInfo formatFlags(int flags) {
         int qr = (flags >> 15) & 1;
         int opcode = (flags >> 11) & 0xF;
         int aa = (flags >> 10) & 1;
@@ -172,9 +167,10 @@ public class DnsParser {
             flagNames.add("cd");
         }
 
-        String headerLine = String.format("opcode: %s, status: %s", OPCODE_MAP.getOrDefault(opcode, String.valueOf(opcode)),
+        String headerLine = String.format("opcode: %s, status: %s",
+                OPCODE_MAP.getOrDefault(opcode, String.valueOf(opcode)),
                 RCODE_MAP.getOrDefault(flags & 0xF, String.valueOf(flags & 0xF)));
-        return String.format("%s;;%s", String.join(" ", flagNames), headerLine);
+        return new FlagsInfo(String.join(" ", flagNames), headerLine);
     }
 
     private String decodeRdata(ResourceRecord record) throws IOException {
@@ -226,11 +222,10 @@ public class DnsParser {
         DnsParser parser = new DnsParser(data);
         DNSHeader header = parser.parseHeader();
 
-        String flagsLine = formatFlags(header.flags);
-        String[] parts = flagsLine.split(";;", 2);
-        System.out.printf(";; ->>HEADER<<- %s, id: %d%n", parts[1], header.ident);
+        FlagsInfo flagsInfo = formatFlags(header.flags);
+        System.out.printf(";; ->>HEADER<<- %s, id: %d%n", flagsInfo.headerLine, header.ident);
         System.out.printf(";; flags: %s; QUERY: %d, ANSWER: %d, AUTHORITY: %d, ADDITIONAL: %d%n",
-                parts[0], header.qdcount, header.ancount, header.nscount, header.arcount);
+                flagsInfo.flagSummary, header.qdcount, header.ancount, header.nscount, header.arcount);
 
         System.out.println("\n;; QUESTION SECTION:");
         List<Question> questions = new ArrayList<>();
@@ -313,6 +308,16 @@ public class DnsParser {
             this.rdlength = rdlength;
             this.rdataOffset = rdataOffset;
             this.rdata = rdata;
+        }
+    }
+
+    private static class FlagsInfo {
+        private final String flagSummary;
+        private final String headerLine;
+
+        private FlagsInfo(String flagSummary, String headerLine) {
+            this.flagSummary = flagSummary;
+            this.headerLine = headerLine;
         }
     }
 }
