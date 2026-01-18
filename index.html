@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AirLiftOne | Autonomous Air Delivery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo" aria-label="AirLiftOne logo">AirLift<span>One</span></div>
+    <nav class="nav" aria-label="Primary">
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav__links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#operations">Operations</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#safety">Safety</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#cta">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--ghost" href="#cta">Launch a route</a>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Beyond ground congestion</p>
+        <h1>Airline-fast delivery for groceries, restaurants, and urgent essentials.</h1>
+        <p class="lead">AirLiftOne is an autonomous airline that carries goods across the sky lanes—no riders, no traffic, just reliable minutes-fast drop-offs for every neighborhood.</p>
+        <div class="hero__actions">
+          <a class="btn" href="#cta">Book a discovery flight</a>
+          <a class="btn btn--ghost" href="#solutions">See solutions</a>
+        </div>
+        <div class="pillbar" role="list">
+          <div class="pill" role="listitem">12 min avg arrival</div>
+          <div class="pill" role="listitem">18 kg payload pods</div>
+          <div class="pill" role="listitem">ATC-friendly transponders</div>
+          <div class="pill" role="listitem">Live chain-of-custody</div>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="radar">
+          <div class="radar__pulse"></div>
+          <div class="radar__pulse radar__pulse--delayed"></div>
+          <div class="flightpath">
+            <span class="dot dot--start">Hub</span>
+            <span class="dot dot--mid">Sky Lane</span>
+            <span class="dot dot--end">Doorstep</span>
+          </div>
+          <div class="radar__label">Autonomous route lock</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions" class="panel">
+      <div class="panel__header">
+        <p class="eyebrow">Delivery verticals</p>
+        <h2>Built for every essential order.</h2>
+        <p>One airline serves your grocery chain, restaurants, pharmacies, and urgent retail with aircraft-grade reliability and retail-grade speed.</p>
+      </div>
+      <div class="grid grid--four">
+        <article class="card">
+          <h3>Groceries</h3>
+          <p>Cold-chain pods with live temperature telemetry keep produce crisp and ice cream frozen end-to-end.</p>
+          <ul>
+            <li>Refrigerated & frozen slots</li>
+            <li>Freshness scoring on landing</li>
+            <li>Reusable insulated liners</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Prepared meals</h3>
+          <p>Thermal isolation and spill-safe containers preserve plating so chef-quality meals arrive intact.</p>
+          <ul>
+            <li>Heat-stable trays</li>
+            <li>Zero-vibration sling</li>
+            <li>Kitchen-ready ETAs</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Pharmacy & care</h3>
+          <p>Secure custody with authenticated pad access and delivery codes for prescriptions and health kits.</p>
+          <ul>
+            <li>Identity-verified pickup</li>
+            <li>Proof-of-delivery logs</li>
+            <li>Regulatory audit trails</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Retail & returns</h3>
+          <p>Micro-parcel pods for electronics, apparel, and returns with full tracking and customer updates.</p>
+          <ul>
+            <li>Smart lockers at pads</li>
+            <li>Two-way returns flow</li>
+            <li>Webhook-ready events</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="operations" class="panel panel--dark">
+      <div class="panel__header">
+        <p class="eyebrow">Airline-grade operations</p>
+        <h2>Everything runs from one console.</h2>
+        <p>Dispatch, monitor, and message customers from a single operations view while our routing AI and pilots-on-call keep every aircraft compliant.</p>
+      </div>
+      <div class="grid grid--three">
+        <article class="card card--highlight">
+          <h3>Unified dispatch</h3>
+          <p>Orders sync from POS, ecommerce, or APIs. Capacity planner batches flights and assigns the closest hub.</p>
+        </article>
+        <article class="card card--highlight">
+          <h3>Live telemetry</h3>
+          <p>Altitude, pod temperature, and winds are tracked in real time with anomaly alerts for your team.</p>
+        </article>
+        <article class="card card--highlight">
+          <h3>Customer messaging</h3>
+          <p>White-label SMS + email updates, pad unlock codes, and proof-of-delivery receipts keep customers informed.</p>
+        </article>
+      </div>
+      <div class="inline-metrics" role="list">
+        <div class="inline-metric" role="listitem">
+          <p class="metric__value">99.4%</p>
+          <p class="metric__label">On-time arrival</p>
+        </div>
+        <div class="inline-metric" role="listitem">
+          <p class="metric__value">60 km</p>
+          <p class="metric__label">Service radius</p>
+        </div>
+        <div class="inline-metric" role="listitem">
+          <p class="metric__value">24/7</p>
+          <p class="metric__label">Ops center coverage</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="network" class="panel">
+      <div class="panel__header">
+        <p class="eyebrow">How it works</p>
+        <h2>From store to sky to doorstep.</h2>
+        <p>AirLiftOne integrates your storefronts, dispatches through nearby hubs, and lands at certified pads near customers.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__number">01</div>
+          <div class="timeline__content">
+            <h3>Auto-dispatch</h3>
+            <p>Order sync + weather and airspace checks run instantly. The optimal aircraft is assigned and pre-flight starts.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__number">02</div>
+          <div class="timeline__content">
+            <h3>Airborne delivery</h3>
+            <p>Fixed-wing eVTOL climbs above traffic, cruising 5x faster than ground couriers while monitoring pod conditions.</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__number">03</div>
+          <div class="timeline__content">
+            <h3>Precision drop</h3>
+            <p>Computer vision selects your approved pad, lowers the container with soft-drop tech, and logs delivery proof.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="safety" class="panel panel--dark">
+      <div class="panel__header">
+        <p class="eyebrow">Safety & compliance</p>
+        <h2>Certified for dense cities and rural edges.</h2>
+        <p>Every aircraft and pad follows airline-grade redundancies with transparent compliance reporting.</p>
+      </div>
+      <div class="grid grid--three">
+        <article class="card">
+          <h3>Redundant avionics</h3>
+          <p>Triple-redundant power, parachute recovery, and ADS-B transponders keep every flight visible and fail-safe.</p>
+        </article>
+        <article class="card">
+          <h3>Pad standards</h3>
+          <p>Computer-vision pad validation, geo-fencing, and lighting checks before every descent.</p>
+        </article>
+        <article class="card">
+          <h3>Compliance console</h3>
+          <p>Flight logs, emissions reports, and audit-ready records are exportable on demand.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel panel--map">
+      <div class="panel__header">
+        <p class="eyebrow">Coverage</p>
+        <h2>Launch-ready in your next city.</h2>
+        <p>We place micro-hubs near your stores and plot certified pads across neighborhoods to maximize 12-minute arrivals.</p>
+      </div>
+      <div class="mapbox" role="presentation">
+        <div class="mapbox__grid">
+          <span class="mapbox__ping" style="top: 30%; left: 32%"></span>
+          <span class="mapbox__ping" style="top: 55%; left: 48%"></span>
+          <span class="mapbox__ping" style="top: 40%; left: 70%"></span>
+          <span class="mapbox__ping" style="top: 65%; left: 26%"></span>
+        </div>
+        <div class="mapbox__legend">
+          <div>
+            <span class="legend-dot"></span> Operational hubs
+          </div>
+          <div>
+            <span class="legend-dot legend-dot--green"></span> Certified pads
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="faq">
+      <div class="panel__header">
+        <p class="eyebrow">FAQ</p>
+        <h2>What partners ask us first.</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How fast can we launch?</summary>
+          <p>Typical launch is 4–6 weeks: pad survey, regulatory approvals, hub placement, and API/POS integration.</p>
+        </details>
+        <details>
+          <summary>Do customers need special hardware?</summary>
+          <p>No. We deploy pre-certified pads that fit small footprints. Customers get unlock codes via SMS or your app.</p>
+        </details>
+        <details>
+          <summary>How do we integrate?</summary>
+          <p>Use our REST/GraphQL APIs or direct POS integrations. Webhooks return live events for ETAs, proof-of-delivery, and returns.</p>
+        </details>
+        <details>
+          <summary>Where do you operate?</summary>
+          <p>We run mixed urban and suburban routes. Tell us your next city—we model airspace, pads, and micro-hubs for you.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="cta" class="cta">
+      <div class="cta__content">
+        <p class="eyebrow">Launch in weeks</p>
+        <h2>Ready to deliver above traffic?</h2>
+        <p>Schedule a discovery flight and map the first routes for your grocery, restaurant, pharmacy, or retail network.</p>
+        <div class="cta__actions">
+          <a class="btn" href="mailto:hello@airliftone.com">Book a discovery flight</a>
+          <a class="btn btn--ghost" href="#solutions">Explore services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">AirLiftOne</div>
+    <div class="footer__meta">
+      <p>Low-altitude airline for groceries, meals, pharmacy, and essentials.</p>
+      <p class="footer__contact">Contact: <a href="mailto:hello@airliftone.com">hello@airliftone.com</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
